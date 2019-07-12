@@ -17,7 +17,7 @@ export class RatingService {
       movie: movie_id,
       stars: rating,
     };
-    return this.http.post(this.baseUrl + 'ratings/rate_movie/', body, this.getAuthHeaders());
+    return this.http.post(this.baseUrl + 'api/ratings/rate_movie/', body, this.getAuthHeaders());
   }
 
   private getAuthHeaders() {

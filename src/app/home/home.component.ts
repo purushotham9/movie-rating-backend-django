@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
       me => this.account = me
     );
     if ( localStorage.getItem('token') && localStorage.getItem('account')) {
-      this.global.me = JSON.parse(localStorage.getItem('account'));
+      this.global.me = JSON.parse(JSON.stringify(localStorage.getItem('account')));
       this.getMovies();
     } else {
       this.router.navigate(['/login']);

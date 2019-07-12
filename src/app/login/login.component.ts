@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loading = false;
     if ( localStorage.getItem('token') && localStorage.getItem('account')) {
-      this.global.me = JSON.parse(localStorage.getItem('account'));
+      this.global.me = JSON.parse(JSON.stringify(localStorage.getItem('account')));
       this.router.navigate(['/home']);
     }
   }

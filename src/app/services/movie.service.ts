@@ -13,18 +13,18 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getMovies(): Observable<any> {
-    return this.http.get(this.baseUrl + 'movies/', this.getAuthHeaders());
+    return this.http.get(this.baseUrl + 'api/movies/', this.getAuthHeaders());
   }
 
   addMovie(movie: Movie): Observable<any> {
-    return this.http.post(this.baseUrl + 'movies/', movie, this.getAuthHeaders());
+    return this.http.post(this.baseUrl + 'api/movies/', movie, this.getAuthHeaders());
   }
 
   editMovie(movie: Movie, id: number): Observable<any> {
-    return this.http.put(this.baseUrl + 'movies/' + id + '/', movie, this.getAuthHeaders());
+    return this.http.put(this.baseUrl + 'api/movies/' + id + '/', movie, this.getAuthHeaders());
   }
   deleteMovie(id: number): Observable<any> {
-    return this.http.delete(this.baseUrl + 'movies/' + id + '/', this.getAuthHeaders());
+    return this.http.delete(this.baseUrl + 'api/movies/' + id + '/', this.getAuthHeaders());
   }
 
   private getAuthHeaders() {
